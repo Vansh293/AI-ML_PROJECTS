@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Finance Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Internal CSS -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fc;
+            color: #333;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            background-color: #0077cc;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffdd57;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            background: linear-gradient(120deg, #0077cc, #0099ff);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: #ffdd57;
+            color: #333;
+            padding: 14px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f0c93d;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            width: 250px;
+            text-align: center;
+        }
+
+        .card i {
+            margin-bottom: 15px;
+            color: #0077cc;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            color: #555;
+        }
+        nav li{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('history_page') }}">History</a></li>
+            <li><a href="{{ url_for('predict') }}">Predict</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1><i class="fas fa-chart-line"></i> Welcome to the Finance Predictor</h1>
+            <p>Predict insurance charges based on personal and lifestyle information using a machine learning model.</p>
+            <a href="{{ url_for('predict') }}" class="btn"><i class="fas fa-bolt"></i> Start Predicting</a>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <i class="fas fa-brain fa-2x"></i>
+                <h3>Smart Predictions</h3>
+                <p>Leverages machine learning to estimate charges with high accuracy.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-lock fa-2x"></i>
+                <h3>Private & Secure</h3>
+                <p>Your data stays secure and is never stored without your permission.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-bar fa-2x"></i>
+                <h3>Track History</h3>
+                <p>View your prediction history to compare and analyze your inputs.</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

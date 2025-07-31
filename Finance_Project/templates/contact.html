@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% block title %}Contact Us - Finance Predictor{% endblock %}
+
+{% block content %}
+<h1><i class="fas fa-envelope icon"></i> Contact Us</h1>
+<form action="/submit_contact" method="post">
+    <label>Your Name:</label>
+    <input type="text" name="name" required>
+
+    <label>Email Address:</label>
+    <input type="email" name="email" required>
+
+    <label>Message:</label>
+    <textarea name="message" rows="5" required style="resize: none;"></textarea>
+
+    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+</form>
+{% endblock %}
+</html>

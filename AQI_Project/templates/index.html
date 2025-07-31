@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AQI Predictor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Air Quality Index Predictor</h1>
+    <form method="POST" action="/predict">
+
+<!-- Country input -->
+<label for="country">Country:</label>
+<input type="text" name="country" placeholder="Enter Country" required>
+
+<!-- City input -->
+<label for="city">City:</label>
+<input type="text" name="city" placeholder="Enter City" required>
+
+
+      <!-- AQI Value dropdown -->
+      <label for="aqi_value">AQI Value:</label>
+      <select name="aqi_value" required>
+        {% for i in range(0, 201) %}
+          <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+      </select>
+
+      <!-- CO AQI Value dropdown -->
+      <label for="co_value">CO AQI Value:</label>
+      <select name="co_value" required>
+        {% for i in range(0, 201) %}
+          <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+      </select>
+
+      <!-- Ozone AQI Value dropdown -->
+      <label for="ozone_value">Ozone AQI Value:</label>
+      <select name="ozone_value" required>
+        {% for i in range(0, 201) %}
+          <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+      </select>
+
+      <!-- NO2 AQI Value dropdown -->
+      <label for="no2_value">NO₂ AQI Value:</label>
+      <select name="no2_value" required>
+        {% for i in range(0, 201) %}
+          <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+      </select>
+
+      <!-- PM2.5 AQI Value dropdown -->
+      <label for="pm25_value">PM2.5 AQI Value:</label>
+      <select name="pm25_value" required>
+        {% for i in range(0, 201) %}
+          <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+      </select>
+
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        <h2>Prediction Result:</h2>
+        <p><strong>AQI Category:</strong> {{ prediction[0] }}</p>
+        <p><strong>CO AQI Category:</strong> {{ prediction[1] }}</p>
+        <p><strong>Ozone AQI Category:</strong> {{ prediction[2] }}</p>
+        <p><strong>NO₂ AQI Category:</strong> {{ prediction[3] }}</p>
+        <p><strong>PM2.5 AQI Category:</strong> {{ prediction[4] }}</p>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

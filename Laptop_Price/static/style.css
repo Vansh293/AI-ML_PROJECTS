@@ -1,0 +1,89 @@
+/* Background & Layout */
+body {
+    background: linear-gradient(135deg, #dff9fb, #c7ecee);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 50px;
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Headings */
+h2 {
+    font-weight: 600;
+    text-shadow: 1px 1px 2px #bbb;
+}
+
+/* Input Fields */
+input.form-control,
+select.form-select {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+input.form-control:focus,
+select.form-select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+    outline: none;
+}
+
+/* Submit Button */
+button.btn-primary {
+    background: linear-gradient(90deg, #2980b9, #3498db);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 30px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background: linear-gradient(90deg, #1c5980, #2471a3);
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* Prediction Result */
+.alert-success {
+    font-size: 20px;
+    font-weight: 500;
+    animation: bounceIn 0.5s ease-out;
+    border-radius: 15px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}

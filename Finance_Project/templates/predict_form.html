@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% block title %}Predict Charges - Finance Predictor{% endblock %}
+
+{% block content %}
+<h1><i class="fas fa-calculator icon"></i> Predict Insurance Charges</h1>
+
+<form action="/predict" method="POST">
+    <label for="age">Age:</label>
+    <input type="number" name="age" id="age" required>
+
+    <label for="sex">Sex:</label>
+    <select name="sex" id="sex" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+
+    <label for="bmi">BMI:</label>
+    <input type="number" name="bmi" step="0.1" id="bmi" required>
+
+    <label for="children">Number of Children:</label>
+    <input type="number" name="children" id="children" required>
+
+    <label for="smoker">Smoker:</label>
+    <select name="smoker" id="smoker" required>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="region">Region:</label>
+    <select name="region" id="region" required>
+        <option value="northeast">Northeast</option>
+        <option value="northwest">Northwest</option>
+        <option value="southeast">Southeast</option>
+        <option value="southwest">Southwest</option>
+    </select>
+
+    <button type="submit"><i class="fas fa-bolt"></i> Predict</button>
+</form>
+
+{% if prediction %}
+    <div class="card">
+       
+        <h2><i class="fas fa-money-bill-wave icon"></i> Estimated Charges: ${{ prediction }}</h2>
+    </div>
+{% endif %}
+{% endblock %}
+</html>

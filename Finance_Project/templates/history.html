@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "base.html" %}
+{% block title %}History - Finance Predictor{% endblock %}
+
+{% block content %}
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 12px 15px;
+        text-align: center;
+    }
+    th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    tr:hover {
+        background-color: #e9f5ff;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+</style>
+
+<h1><i class="fas fa-history icon"></i> Prediction History</h1>
+
+<table>
+    <tr>
+        <th>Age</th>
+        <th>Sex</th>
+        <th>BMI</th>
+        <th>Children</th>
+        <th>Smoker</th>
+        <th>Region</th>
+        <th>Predicted Charges</th>
+    </tr>
+    {% for entry in history %}
+    <tr>
+        <td>{{ entry.age }}</td>
+        <td>{{ entry.sex }}</td>
+        <td>{{ entry.bmi }}</td>
+        <td>{{ entry.children }}</td>
+        <td>{{ entry.smoker }}</td>
+        <td>{{ entry.region }}</td>
+        <td>${{ entry.charges }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+</html>
